@@ -8,8 +8,8 @@ if [ -z $pidOfFFMPEG ]; then
   amixer -c 1 sset Capture 65% > /dev/null
   ffmpeg \
 -f x11grab -i :0.0 \
--vf "scale=1280:800"
 -f pulse -i default -ac 2 \
+-vf "scale=1280:800" \
 -af "highpass=f=100, lowpass=f=3000, volumedetect, volume=2.3" \
 -c:a aac -b:a 160k \
 -c:v libx264 -preset fast -crf 18 \
