@@ -2,7 +2,7 @@
 pidOfFFMPEG=$(ps aux | grep -i 'ffmpeg -f x11grab' | grep -v 'grep' | awk '{print $2}')
 filePathOutput="/home/$USER/Videos"
 filePrefix="screenCapture_"
-fileFullName="$filePathOutput/$filePrefix$(date +'%%e-%m--H-%M-%S').mkv"
+fileFullName="$filePathOutput/$filePrefix$(date +'%e-%m--%H-%M-%S').mkv"
 
 if [ -z $pidOfFFMPEG ]; then
   amixer -c 1 sset Capture 65% > /dev/null
