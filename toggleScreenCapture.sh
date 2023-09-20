@@ -5,7 +5,7 @@ filePrefix="screenCapture_"
 fileFullName="$filePathOutput/$filePrefix$(date +'%e-%m--%H-%M-%S').mkv"
 
 if [ -z $pidOfFFMPEG ]; then
-  amixer -c 1 sset Capture 65% > /dev/null
+  amixer -c 1 sset Capture 75% > /dev/null
   ffmpeg \
 -f x11grab -i :0.0 \
 -f pulse -i default -ac 2 \
